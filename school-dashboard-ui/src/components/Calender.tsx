@@ -11,7 +11,7 @@ const Calender = () => {
     const [value, onChange] = useState<Value>(new Date());
 
     return (
-      <div className='p-4 rounded-xl'>
+      <div className='rounded-xl w-full'>
         <Calendar onChange={onChange} value={value} />
       </div>
   )
