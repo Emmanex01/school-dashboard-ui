@@ -16,3 +16,84 @@
     background-color: #c3ebfa !important;
     color: black !important;
 }
+
+.rbc-btn-group:first-child{
+    display: none !important;
+}
+
+.rbc-toolbar-label{
+    text-align: right !important;
+    font-weight: 700 !important;
+}
+
+.rbc-timeslot-group {
+    min-height: 100px !important;
+}
+
+.rbc-btn-group:last-child{
+    font-size: 13px !important;
+}
+
+.rbc-toolbar button{
+    border: none !important;
+}
+
+.rbc-toolbar button:first-child{
+    margin-right: 2px !important;
+}
+
+.rbc-toolbar .rbc-active{
+    box-shadow: none !important;
+}
+
+.rbc-time-header{
+display: none !important;
+}
+
+.rbc-time-view{
+    border: none !important;
+}
+
+.rbc-time-gutter .rbc-time-column{
+    font-size: 12px !important;
+}
+
+.rbc-event:nth-child(1){
+    background-color: blue !important;
+}
+
+.rbc-event:nth-child(2){
+    background-color: yellow !important;
+}
+
+.rbc-event:nth-child(3){
+    background-color: paleturquoise !important;
+}
+
+.rbc-event:nth-child(4){
+    background-color: blueviolet !important;
+}
+
+.rbc-event:nth-child(5){
+    background-color: brown !important;
+}
+
+.rbc-event:nth-child(6){
+    background-color: orange !important;
+}
+
+.rbc-event:nth-child(7){
+    background-color: greenyellow !important;
+}
+
+.rbc-event:nth-child(8){
+    background-color: burlywood !important;
+}
+
+.rbc-event{
+    border: none !important;
+    padding: 10px !important;
+    margin: 10px !important;
+    word-wrap: break-word !important;
+    font-size: 14px !important;
+}
