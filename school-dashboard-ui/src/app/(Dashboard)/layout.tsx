@@ -17,7 +17,7 @@ const DashboardLayout = ({children}: {children: React.ReactNode} ) => {
         </div>
 
         {/* Right */}
-        <div className='w-[86%] md:w-[92%] lg:w-[86%] bg-slate-200 overflow-scroll'>
+        <div className='w-[86%] md:w-[92%] lg:w-[86%] bg-slate-200 overflow-scroll p-4'>
           <Navbar/>
           {children}
         </div>
