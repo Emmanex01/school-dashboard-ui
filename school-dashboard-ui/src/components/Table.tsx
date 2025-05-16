@@ -1,4 +1,3 @@
-import { table } from 'console'
 import React from 'react'
 
 type tableProps = {
