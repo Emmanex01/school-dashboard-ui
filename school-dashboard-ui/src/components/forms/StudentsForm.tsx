@@ -8,7 +8,7 @@ import { error } from 'console';
 import { Label } from 'recharts';
 import Image from 'next/image';
 
-const TeachersForm = ({
+const StudentsForm = ({
     type, 
     data
     } : {
@@ -66,7 +66,7 @@ const TeachersForm = ({
   return (
     <form onSubmit={handleSubmit((d) => console.log(d))}>
         <div className=''>
-            <h1 className='font-semibold my-4'>Create a new teacher</h1>
+            <h1 className='font-semibold my-4'>Create a new student</h1>
             <div className='text-gray-500 my-8'>Authentication information</div>
             <div className='grid gap-8 grid-cols-1 md:grid-cols-3'>
                 <InputField 
@@ -180,4 +180,4 @@ const TeachersForm = ({
   )
 }
 
-export default TeachersForm
+export default StudentsForm

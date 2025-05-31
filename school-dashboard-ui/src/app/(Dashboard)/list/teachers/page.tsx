@@ -123,7 +123,7 @@ const TeachersListPage = () => {
       {/* TABLE TITLE */}
       <div className='flex justify-between items-center'>
         <h1 className='hidden md:block font-bold'>All Teachers</h1>
-        <TableSearch/>   
+        <TableSearch table='teacher'/>   
       </div>
 
       {/* TABLE */}

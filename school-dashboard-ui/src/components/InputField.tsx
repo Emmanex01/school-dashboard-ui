@@ -1,17 +1,22 @@
 import React from 'react'
+import {FieldError} from 'react-hook-form'
 
 const InputField = ({
     name,
-    type,
+    type = "text",
     register,
-    errors,
+    error,
     label,
+    defaultValues,
+    inputProps
     } : {
     name: string,
     type?: string,
     register:any,
-    errors?: string,
+    error?: FieldError,
     label: string,
+    defaultValues?: any,
+    inputProps?: React.InputHTMLAttributes<HTMLInputElement>
     }) => {
   return (
     <div className='flex flex-col gap-1'>
@@ -19,10 +24,12 @@ const InputField = ({
         <input 
             id={name}
             type={type}
-            {...register({name})} 
+            {...register(name)} 
             className='outline-none border-[1px] border-gray-400 rounded-md'
+            {...inputProps}
+            defaultValue={defaultValues}
         />
-        {errors && <p className='text-red-600 text-sm'>{errors}</p>}
+        {error?.message && <p className='text-red-600 text-sm'>{error.message.toString()}</p>}
     </div>
   )
 }

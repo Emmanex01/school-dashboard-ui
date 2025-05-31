@@ -1,6 +1,16 @@
 import Image from 'next/image'
-import React, { useState } from 'react'
-import TeachersForm from './forms/TeachersForm'
+import React, { MouseEvent, useState } from 'react'
+import dynamic from 'next/dynamic'
+
+const TeachersForm = dynamic(() => import('./forms/TeachersForm'), {
+  loading: () => <div>Loading...</div>
+})
+
+const StudentsForm = dynamic(() => import('./forms/StudentsForm'), {
+  loading: () => <div>Loading...</div>
+})
+
+
 
 const FormModal = ({
     table,
@@ -14,6 +24,26 @@ const FormModal = ({
     id?: number
     data?:any
     }) => {
+
+      const preventModalClose = (e:MouseEvent) => {
+        e.stopPropagation();
+      }
+
+      const handleModalClose = (e:MouseEvent) => {
+        e.stopPropagation();
+        setOpenModal(false);
+      }
+
+      const handleFormType = () => {
+        if ((type === 'create' || type === 'update') && table === 'teacher') {
+          return <TeachersForm type={type} data={data} />
+        } 
+        if ((type === 'create' || type === 'update') && table === 'student') {
+          return <StudentsForm type={type} data={data} />
+        } else {
+          return 'Invalid form type or table';
+        }
+      }
     
     const [openModal, setOpenModal] = useState(false);
 
@@ -32,7 +62,7 @@ const FormModal = ({
           </button>
         </form>
       ) : (
-        <TeachersForm type={type} data={data}/>
+        handleFormType()
       )
     }
   return (
@@ -44,8 +74,8 @@ const FormModal = ({
         <Image src={`/${type}.png`} height={20} width={20} alt='deleteIcon'/>
       </button>
       {openModal && 
-        <div className='w-screen h-screen bg-black bg-opacity-60 absolute top-0 left-0 flex justify-center items-center'>
-          <div className=' bg-white w-[90%] md:w-[70%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%] relative p-2 rounded-md'>
+        <div onClick={handleModalClose} className='w-screen h-screen bg-black bg-opacity-60 absolute top-0 left-0 flex justify-center items-center'>
+          <div onClick={preventModalClose} className=' bg-white w-[90%] md:w-[70%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%] relative p-2 rounded-md'>
             <Form/>
             <div 
               className='absolute right-1 top-1 cursor-pointer'

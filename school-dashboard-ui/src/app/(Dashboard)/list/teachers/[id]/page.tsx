@@ -1,6 +1,8 @@
+'use client'
 import Announcement from '@/components/Announcement'
 import BigCalender from '@/components/BigCalender'
 import Performance from '@/components/charts/Performance'
+import FormModal from '@/components/FormModal'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'

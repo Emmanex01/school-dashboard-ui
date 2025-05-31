@@ -113,7 +113,7 @@ const studentsList = () => {
         {/* TABLE TITLE */}
         <div className='flex justify-between items-center'>
             <h1 className='hidden md:block font-bold'>All Students</h1>
-            <TableSearch/>   
+            <TableSearch table='student'/>  
         </div>
 
         {/* TABLE */}
